@@ -16,7 +16,7 @@
     <meta property="og:description" content="I came across Ghost before, but more recently in my attempt to save money by getting rid of the &quot;big name CMS&quot;.  I always thought Ghost was hard to get going and didn&#x27;t want to pay for a blog on their site.  Today I found out that it is somewhat" />
     <meta property="og:url" content="mikedevs.com/moved-to-ghost/" />
     <meta property="article:published_time" content="2021-12-22T20:30:29.000Z" />
-    <meta property="article:modified_time" content="2021-12-22T20:43:26.000Z" />
+    <meta property="article:modified_time" content="2021-12-23T15:39:09.000Z" />
     <meta property="article:tag" content="ghost" />
     
     <meta name="twitter:card" content="summary" />
@@ -52,9 +52,9 @@
     "headline": "Moved to Ghost",
     "url": "mikedevs.com/moved-to-ghost/",
     "datePublished": "2021-12-22T20:30:29.000Z",
-    "dateModified": "2021-12-22T20:43:26.000Z",
+    "dateModified": "2021-12-23T15:39:09.000Z",
     "keywords": "ghost",
-    "description": "I came across Ghost [https://ghost.org] before, but more recently in my attempt\nto save money by getting rid of the &quot;big name CMS&quot;.  I always thought Ghost was\nhard to get going and didn&#x27;t want to pay for a blog on their site.  Today I\nfound out that it is somewhat easy to get going.  Here are the steps I took, for\nothers looking to use Ghost and long-term storage on the blog.  Caveat...I&#x27;m on\na Mac so please take steps per your operating system.\n\n * Wget was needed to pull the latest version of",
+    "description": "I came across Ghost [https://ghost.org] before, but more recently in my attempt\nto save money by getting rid of the &quot;big name CMS&quot;.  I always thought Ghost was\nhard to get going and didn&#x27;t want to pay for a blog on their site.  Today I\nfound out that it is somewhat easy to get going.  Here are the steps I took, for\nothers looking to use Ghost and long-term storage on the blog.  Caveat...I&#x27;m on\na Mac so please take steps per your operating system.\n\nInstall Ghost locally\n * Wget was needed to pull",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "mikedevs.com/"
@@ -1057,12 +1057,14 @@
             </header>
             <section class="post-content">
 
-                <p>I came across <a href="https://ghost.org">Ghost</a> before, but more recently in my attempt to save money by getting rid of the "big name CMS".  I always thought Ghost was hard to get going and didn't want to pay for a blog on their site.  Today I found out that it is somewhat easy to get going.  Here are the steps I took, for others looking to use Ghost and long-term storage on the blog.  Caveat...I'm on a Mac so please take steps per your operating system.</p><ul><li>Wget was needed to pull the latest version of Ghost <code>.zip</code>.</li></ul><p><code>wget --no-check-certificate https://ghost.org/zip/ghost-latest.zip</code></p>
+                <p>I came across <a href="https://ghost.org">Ghost</a> before, but more recently in my attempt to save money by getting rid of the "big name CMS".  I always thought Ghost was hard to get going and didn't want to pay for a blog on their site.  Today I found out that it is somewhat easy to get going.  Here are the steps I took, for others looking to use Ghost and long-term storage on the blog.  Caveat...I'm on a Mac so please take steps per your operating system.</p><h2 id="install-ghost-locally">Install Ghost locally</h2>
+<ul><li>Wget was needed to pull the latest version of Ghost <code>.zip</code>.</li></ul><p><code>wget --no-check-certificate https://ghost.org/zip/ghost-latest.zip</code></p>
 <ul><li>Now unzip into a <code>ghost</code> folder or whatever folder you want to launch Ghost from.</li></ul><p><code>unzip ghost-latest.zip</code></p>
 <ul><li>Install Ghost using <code>npm</code>.  You'll need to install node, per your operating system, if you haven't already and it includes npm.</li></ul><p><code>npm install --production</code></p>
 <ul><li>You should be able to run Ghost if all went well with the previous steps.</li></ul><p><code>npm start</code></p>
-<ul><li>You got Ghost!  Get to bloggin' and creating pages.</li></ul><p>The admin page should be available at <code>http://yourlocalhostnameorIPaddress:2368/ghost</code></p>
-
+<ul><li>Ghost should start up and you can access the site using the address below (remove /ghost).</li></ul><p>The admin page should be available at <code>http://localhostOrIPaddress:2368/ghost</code></p>
+<h2 id="generate-static-files-from-your-local-ghost-site">Generate static files from your local Ghost site</h2>
+<p>I use GitHub pages to host this static site/blog.  There are numerous instructions out there on how to set that up, along with initializing a <code>git</code> folder that holds your local static files.</p><ol><li>Create a subfolder in your "ghost" folder - where you installed from bullet #2 above - called "static".</li><li>Initialize this with <code>git</code> in order to track file changes going forward and make things easier to push to your GitHub pages location.</li></ol><p>In order to get those "static" files from your local Ghost site - all those posts, pages and whatever else - you'll need to have some sort of static site generation tool.  I could not install <code>buster</code> (it's outdated anyways) so I found a perfectly good bash script to use on Mac - <a href="https://fizzy.cc/ghost-static-generator/">here</a>.  Follow the instructions there to get it setup.  Here's how I have it working...</p><ul><li>Get back to a command prompt, within your root "ghost" folder, after you are finished editing locally.</li><li>Run the "gui" command <code>./gui.sh</code></li><li>Your <code>static</code> subfolder will now have all the necessary files to "push" to GitHub.</li><li>Push those to GitHub and you're done!  Happy bloggin' and static site hostin'!</li></ul>
 
             </section>
 
